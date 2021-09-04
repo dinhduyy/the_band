@@ -7,6 +7,7 @@
     <title>THE WINDOW BOYBAND</title>
     <link rel="icon" href="https://www.chiclettes.com/wp-content/uploads/2020/04/cropped-The-Chiclettes-Band_Favicon3.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="nav-arrow-down ti-angle-down"></i>
                     </a>
@@ -31,13 +32,16 @@
                 </li>
             </ul>
             <!-- End: Nav -->
+
+            <!-- Menu Button -->
+            <div class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
             
-            <!-- Begin: Search Button -->
+            <!-- Search Button -->
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
             </div>
-            <!-- End: Search Button -->
-
         </div>
 
         <div id="slider">
@@ -186,20 +190,20 @@
                     <h2 class="section-heading ">CONTACT</h2>
                     <p class="section-sub-heading">Fan? Drop a note!</p>
 
-                    <div class="row contact-content">
-                        <div class="col col-half">
+                    <div class="row  contact-content">
+                        <div class="col col-half s-col-full">
                             <i class="ti-location-pin col"></i><p class="contact-info">Hanoi, Vietnam</p>
                             <i class="ti-mobile col"></i><p class="contact-info">Phone: (+84) 96 668 8666</p>
                             <i class="ti-email col"></i><p class="contact-info">Email: thewindowboyband@gmail.com</p>
                 
                         </div>
-                        <div class="col col-half contact-form">
+                        <div class="col col-half s-col-full contact-form">
                             <form action="">
-                                <div class="row">
-                                    <div class="col col-half">
+                                <div class="row m-form">
+                                    <div class="col col-half s-col-full">
                                         <input type="text" name="" placeholder="Name" required class="form-control contact-name">
                                     </div>
-                                    <div class="col col-half">
+                                    <div class="col col-half s-col-full">
                                         <input type="email" name="" placeholder="Email" required class="form-control contact-email">
                                     </div>
                                     
@@ -209,7 +213,7 @@
                                         <input type="text" name="" placeholder="Message" required class="form-control">
                                     </div>
                                 </div>
-                                <input class="form-submit-btn mt-16" type="submit" value="SEND">
+                                <input class="form-submit-btn mt-16 s-full-width" type="submit" value="SEND">
                             </form>
                             
                         </div>
@@ -334,6 +338,53 @@
         setInterval(switchSlider,4000)
         
     // End Switching sliders
+
+    // Begin Mobile Menu 
+        var header = document.getElementById('header')
+        var mobileMenu = document.querySelector('#header .mobile-menu-btn')
+        var headerHeight = header.clientHeight
+
+        mobileMenu.onclick = function() {
+            var isClose = header.clientHeight === headerHeight
+            if (isClose) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+    // End Mobile Menu 
+
+    // Begin Auto Hidden Menu After Click
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i]
+
+            menuItem.onclick = function (event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if(isParentMenu) {
+                    event.preventDefault()
+                } else {
+                    header.style.height = null;
+                    subNav.style.height = null;
+                }
+            }
+        }
+    //End Auto Hidden Menu After Click
+
+    // Begin Sub-Navigation
+        var subNav = document.querySelector('#nav > li:last-child')
+        var subNavHeight = subNav.clientHeight
+        subNav.onclick = function() {
+            var isClose = subNav.clientHeight === subNavHeight
+            if (isClose) {
+                subNav.style.height = 'auto';
+            } else {
+                subNav.style.height = null;
+            }
+        }
+        
+    // End Sub-Navigation
+
     </script>
 </body>
 </html>

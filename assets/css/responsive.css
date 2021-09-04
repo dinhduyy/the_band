@@ -1,0 +1,134 @@
+/* Mobile */
+@media (max-width: 740px) {
+    .s-full-width,
+    .s-col-full {
+        width: 100% !important;
+    }
+
+    #header {
+        overflow: hidden;
+    }
+
+    #header .search-icon {
+        display: none;
+    }
+    
+    #header .mobile-menu-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+    }
+
+    #nav > li {
+        height: auto;
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav > li:last-child {
+        height: 46px;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+        display: block;
+    }
+    
+    #nav .subnav a {
+        color: #fff;
+        padding: 0 41px;
+        line-height: 46px;
+    }
+
+    #slider .text-description {
+        display: none;
+    }
+
+    #content .about-text {
+        width: auto;
+        
+    }
+
+    #content .content-section {
+        padding: 74px 16px 83px 16px;
+
+    }
+
+    #content .tour-section .place-list {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: auto;
+    }
+
+    #content .tour-section {
+        height: auto;
+        padding: 0 0 74px 0;
+    }
+
+    .place-item {
+        float: none;
+        margin-bottom: 16px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .place-item .place-buy-btn {
+        width: 100%
+    }
+
+    #contact {
+        height: auto;
+    }
+
+    .contact-form {
+        margin-top: 16px;
+    }
+
+    .contact-form .contact-email {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 8px;;
+    }
+
+    .contact-form .contact-name {
+        width: 100%;
+
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    #content .content-section {
+        padding: 74px 16px 0 16px;
+        width: auto;
+    }
+
+    #tour .place-list {
+        width: auto;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .contact-form .contact-name {
+        width: 100%;
+    }
+
+    .contact-form .contact-email {
+        width: 100%;
+        
+    }
+
+    .contact-form .m-form {
+        padding: 0 8px 0 0;
+    }
+}
+
